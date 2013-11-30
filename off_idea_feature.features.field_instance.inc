@@ -70,39 +70,6 @@ function off_idea_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_story-comment_body'
-  $field_instances['comment-comment_node_story-comment_body'] = array(
-    'bundle' => 'comment_node_story',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'comment',
-    'field_name' => 'comment_body',
-    'label' => 'Comment',
-    'required' => TRUE,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'node-idea-body'
   $field_instances['node-idea-body'] = array(
     'bundle' => 'idea',
@@ -277,56 +244,83 @@ function off_idea_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story-body'
-  $field_instances['node-story-body'] = array(
-    'bundle' => 'story',
+  // Exported field_instance: 'node-idea-og_group_ref'
+  $field_instances['node-idea-og_group_ref'] = array(
+    'bundle' => 'idea',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
+        'label' => 'above',
+        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'og_list_default',
+        'weight' => 4,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'entityconnect_unload_add' => 0,
+    'entityconnect_unload_edit' => 0,
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'disable',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'og_context' => 0,
+          'skip_perm' => 0,
+          'status' => 1,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
       ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 7,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
   t('Comment');
   t('Component');
   t('Details');
+  t('Groups audience');
   t('Story');
 
   return $field_instances;
