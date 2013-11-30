@@ -13,7 +13,7 @@ function off_idea_feature_views_default_views() {
   $view = new view();
   $view->name = 'idea_votes';
   $view->description = 'Used in  a view header to show how many votes a user has made.';
-  $view->tag = 'default';
+  $view->tag = 'Idea Feature';
   $view->base_table = 'node';
   $view->human_name = 'Idea Votes';
   $view->core = 7;
@@ -79,7 +79,7 @@ function off_idea_feature_views_default_views() {
   $view = new view();
   $view->name = 'ideas';
   $view->description = 'Lists all ideas, which can be voted on in the view.';
-  $view->tag = 'default';
+  $view->tag = 'Idea Feature';
   $view->base_table = 'node';
   $view->human_name = 'Ideas';
   $view->core = 7;
