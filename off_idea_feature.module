@@ -12,14 +12,25 @@ include_once 'off_idea_feature.features.inc';
  */
 function off_idea_feature_flag_validate($action, $flag, $entity_id, $account, $skip_permission_check, $flagging) {
   if ($flag->name === "idea_vote") {
+    // Ignore unflaggings.
     if ($action === 'flag') {
-      $flags = db_select('flagging', 'f')
-        ->fields("f")
-        ->condition('uid', $account->uid, "=")
-        ->execute();
-      $x = $flags->rowCount();
-      if ($flags->rowCount() >= 3) {
-        return t("You have allready placed three votes, and you will have to remove a vote before you can add more.");
+      // Get current group context gid.
+      if (!empty($_SESSION['og_context']['gid'])) {
+        $gid = $_SESSION['og_context']['gid'];
+        // Return users current votes in the group.
+        $query = db_select('flagging', 'i')
+          ->condition('i.uid', $account->uid, "=")
+          ->fields("i");
+        $query->leftJoin('flag', 'f', 'f.fid = i.fid');
+        $query->condition('f.name', 'idea_vote', "=");
+        $query->leftJoin('og_membership', 'm', 'm.etid = i.entity_id');
+        $query->condition('m.entity_type', 'node', "=");
+        $query->condition('m.gid', $gid, "=");
+        // Check number of votes dosn't exceed 3.
+        $result = $query->execute();
+        if ($result->rowCount() >= 3) {
+          return t("You have allready placed three votes! You will have to remove one before you can vote again.");
+        }
       }
     }
   }
