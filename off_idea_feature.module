@@ -12,20 +12,20 @@ include_once 'off_idea_feature.features.inc';
  */
 function off_idea_feature_flag_validate($action, $flag, $entity_id, $account, $skip_permission_check, $flagging) {
   if ($flag->name === "idea_vote") {
-    // Ignore unflaggings.
+    // We only look at flaggings, and ignore unflaggings.
     if ($action === 'flag') {
       // Get current group context gid.
       if (!empty($_SESSION['og_context']['gid'])) {
         $gid = $_SESSION['og_context']['gid'];
-        // Return users current votes in the group.
+        // Query users current votes in the group.
         $query = db_select('flagging', 'i')
           ->condition('i.uid', $account->uid, "=")
           ->fields("i");
         $query->leftJoin('flag', 'f', 'f.fid = i.fid');
         $query->condition('f.name', 'idea_vote', "=");
         $query->leftJoin('og_membership', 'm', 'm.etid = i.entity_id');
-        $query->condition('m.entity_type', 'node', "=");
-        $query->condition('m.gid', $gid, "=");
+        $query->condition('m.entity_type', 'node', "=")
+          ->condition('m.gid', $gid, "=");
         // Check number of votes dosn't exceed 3.
         $result = $query->execute();
         if ($result->rowCount() >= 3) {
