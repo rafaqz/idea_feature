@@ -25,8 +25,8 @@ function off_idea_feature_user_default_permissions() {
     'name' => 'delete any idea content',
     'roles' => array(
       'Admin' => 'Admin',
+      'Community Moderator' => 'Community Moderator',
       'Content Manager' => 'Content Manager',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -46,7 +46,8 @@ function off_idea_feature_user_default_permissions() {
     'name' => 'edit any idea content',
     'roles' => array(
       'Admin' => 'Admin',
-      'authenticated user' => 'authenticated user',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
