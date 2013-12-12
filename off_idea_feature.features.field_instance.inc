@@ -141,8 +141,8 @@ function off_idea_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-idea-field_idea_component'
-  $field_instances['node-idea-field_idea_component'] = array(
+  // Exported field_instance: 'node-idea-field_category'
+  $field_instances['node-idea-field_category'] = array(
     'bundle' => 'idea',
     'default_value' => NULL,
     'deleted' => 0,
@@ -153,28 +153,40 @@ function off_idea_feature_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_idea_component',
-    'label' => 'Component',
+    'field_name' => 'field_category',
+    'label' => 'Category',
+    'options_limit' => 0,
+    'options_limit_empty_behaviour' => 1,
+    'options_limit_fields' => array(
+      'og_group_ref' => 'og_group_ref',
+    ),
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
+    ),
+    'view' => array(
+      'args' => array(),
+      'display_name' => 'term_reference_1',
+      'match_operator' => 'CONTAINS',
+      'size' => '',
+      'view_name' => 'group_categories',
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 1,
+      'weight' => 8,
     ),
   );
 
@@ -317,8 +329,8 @@ function off_idea_feature_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Category');
   t('Comment');
-  t('Component');
   t('Details');
   t('Groups audience');
   t('Story');
