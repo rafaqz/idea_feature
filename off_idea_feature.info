@@ -30,7 +30,6 @@ features[field_instance][] = node-idea-field_category
 features[field_instance][] = node-idea-field_idea_story
 features[field_instance][] = node-idea-og_group_ref
 features[flag][] = idea_vote
-features[hierarchical_select][] = taxonomy-3
 features[node][] = idea
 features[og_features_permission][] = node:closed_group:create idea content
 features[og_features_permission][] = node:closed_group:delete any idea content
