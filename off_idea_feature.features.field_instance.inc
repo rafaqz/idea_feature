@@ -105,8 +105,9 @@ function off_idea_feature_field_default_field_instances() {
           'full_html' => 0,
           'php_code' => 0,
           'plain_text' => 0,
+          'wiki' => 0,
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -121,6 +122,9 @@ function off_idea_feature_field_default_field_instances() {
             ),
             'plain_text' => array(
               'weight' => -48,
+            ),
+            'wiki' => array(
+              'weight' => 0,
             ),
           ),
         ),
