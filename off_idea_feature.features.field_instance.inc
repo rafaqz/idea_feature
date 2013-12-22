@@ -287,6 +287,13 @@ function off_idea_feature_field_default_field_instances() {
     'entityconnect_unload_edit' => 1,
     'field_name' => 'og_group_ref',
     'label' => 'Groups audience',
+    'options_limit' => 0,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(
+      'body' => 0,
+      'field_category' => 0,
+      'og_group_ref' => 0,
+    ),
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -300,8 +307,8 @@ function off_idea_feature_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'disable',
-          'action_on_edit' => 0,
+          'action' => 'hide',
+          'action_on_edit' => 1,
           'fallback' => 'none',
           'og_context' => 0,
           'skip_perm' => 0,
