@@ -180,7 +180,7 @@ function off_idea_feature_field_default_field_instances() {
     ),
     'view' => array(
       'args' => array(),
-      'display_name' => 'term_reference_1',
+      'display_name' => 'term_reference',
       'match_operator' => 'CONTAINS',
       'size' => '',
       'view_name' => 'group_term_reference_filter',
