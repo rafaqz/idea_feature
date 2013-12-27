@@ -62,5 +62,23 @@ function off_idea_feature_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: flag idea_vote.
+  $permissions['flag idea_vote'] = array(
+    'name' => 'flag idea_vote',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: unflag idea_vote.
+  $permissions['unflag idea_vote'] = array(
+    'name' => 'unflag idea_vote',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   return $permissions;
 }
