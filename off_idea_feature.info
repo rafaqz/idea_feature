@@ -75,6 +75,7 @@ features[variable][] = node_options_story
 features[variable][] = node_preview_idea
 features[variable][] = node_submitted_idea
 features[variable][] = node_submitted_story
+features[variable][] = pathauto_node_idea_pattern
 features[views_view][] = idea_list
 features[views_view][] = idea_votes
 features[views_view][] = ideas
