@@ -201,15 +201,6 @@ function off_idea_feature_views_default_views() {
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'idea_votes:default';
   $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
-  /* Header: Global: Link */
-  $handler->display->display_options['header']['link']['id'] = 'link';
-  $handler->display->display_options['header']['link']['table'] = 'views';
-  $handler->display->display_options['header']['link']['field'] = 'link';
-  $handler->display->display_options['header']['link']['label'] = 'Create Idea Link';
-  $handler->display->display_options['header']['link']['empty'] = TRUE;
-  $handler->display->display_options['header']['link']['text'] = 'Create Idea';
-  $handler->display->display_options['header']['link']['path'] = 'node/add/idea';
-  $handler->display->display_options['header']['link']['querystring'] = 'og_group_ref=!1';
   /* Relationship: Flags: idea_vote */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
@@ -303,8 +294,8 @@ function off_idea_feature_views_default_views() {
     'idea' => 'idea',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Group Page */
+  $handler = $view->new_display('page', 'Group Page', 'group_page');
   $handler->display->display_options['path'] = 'node/%/idea';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Ideas';
