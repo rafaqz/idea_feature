@@ -217,31 +217,16 @@ function off_idea_feature_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Flags: Flag link */
-  $handler->display->display_options['fields']['ops']['id'] = 'ops';
-  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
-  $handler->display->display_options['fields']['ops']['field'] = 'ops';
-  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['ops']['label'] = '';
-  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['ops']['link_type'] = 'normal';
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   /* Field: Flags: Flag counter */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
