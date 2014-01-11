@@ -36,11 +36,6 @@ function off_idea_feature_flag_validate($action, $flag, $entity_id, $account, $s
   }
 }
 
-function off_idea_feature_views_pre_view($view, $display_id, $args) {
-  if ($view->name == 'ideas' && $display_id == 'group_page') {
-    collabco_groups_feature_view_content_link($view, 'idea', 'header');
-  }
-}
 
 /**
  * Implements hook_collabco_integration().
