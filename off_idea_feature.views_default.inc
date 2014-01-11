@@ -116,7 +116,7 @@ function off_idea_feature_views_default_views() {
   $handler->display->display_options['empty']['area']['label'] = '3 votes left';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'You have 3 votes left to place.';
-  $handler->display->display_options['empty']['area']['format'] = 'wiki';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Relationship: Flags: idea_vote */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
@@ -201,18 +201,6 @@ function off_idea_feature_views_default_views() {
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'idea_votes:default';
   $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
-  /* Relationship: Flags: idea_vote */
-  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'idea_vote';
-  /* Relationship: Flags: idea_vote counter */
-  $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'idea_vote';
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -227,17 +215,6 @@ function off_idea_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Field: Flags: Flag counter */
-  $handler->display->display_options['fields']['count']['id'] = 'count';
-  $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
-  $handler->display->display_options['fields']['count']['field'] = 'count';
-  $handler->display->display_options['fields']['count']['relationship'] = 'flag_count_rel';
-  $handler->display->display_options['fields']['count']['label'] = 'Votes';
-  /* Field: Content: Comment count */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = 'Comments';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -245,13 +222,6 @@ function off_idea_feature_views_default_views() {
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
-  /* Sort criterion: Flags: Flag counter */
-  $handler->display->display_options['sorts']['count']['id'] = 'count';
-  $handler->display->display_options['sorts']['count']['table'] = 'flag_counts';
-  $handler->display->display_options['sorts']['count']['field'] = 'count';
-  $handler->display->display_options['sorts']['count']['relationship'] = 'flag_count_rel';
-  $handler->display->display_options['sorts']['count']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['count']['expose']['label'] = 'Votes';
   /* Contextual filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
