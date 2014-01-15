@@ -52,7 +52,7 @@ function off_idea_feature_collabco_integration() {
               'entity_type' => 'none',
             ),
             'add_content_link' => array(
-              'bundle' => 'idea',
+              'bundles' => array('idea'),
               'areas' => array('header'),
             ),
           ),
