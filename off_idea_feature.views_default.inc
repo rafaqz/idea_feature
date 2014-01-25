@@ -96,12 +96,14 @@ function off_idea_feature_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['type'] = 'ol';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'title' => 'title',
     'ops' => 'ops',
   );
-  $handler->display->display_options['row_options']['separator'] = ' - ';
+  $handler->display->display_options['row_options']['separator'] = ' ';
   /* Header: Global: Result summary */
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
@@ -255,12 +257,17 @@ function off_idea_feature_views_default_views() {
   /* Display: Group Page */
   $handler = $view->new_display('page', 'Group Page', 'group_page');
   $handler->display->display_options['path'] = 'node/%/idea';
-  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Ideas';
   $handler->display->display_options['menu']['description'] = 'Ideas posted in the group';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: User Page */
+  $handler = $view->new_display('page', 'User Page', 'user_page');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['path'] = 'user/%/idea';
   $export['ideas'] = $view;
 
   return $export;
