@@ -36,7 +36,6 @@ function off_idea_feature_flag_validate($action, $flag, $entity_id, $account, $s
   }
 }
 
-
 /**
  * Implements hook_collabco_integration().
  */
@@ -44,6 +43,13 @@ function off_idea_feature_collabco_integration() {
   // Add links to views if a module wants to do that.
   return array(
     'off_idea_feature' => array(
+      'entity' => array(
+        'node'=> array('idea'),
+      ),
+      'tab' => array(
+        'label' => 'Ideas', 
+        'subpath' => 'idea',
+      ),
       'views' => array(
         'ideas' => array(
           'group_page' => array(
@@ -52,7 +58,6 @@ function off_idea_feature_collabco_integration() {
               'entity_type' => 'none',
             ),
             'add_content_link' => array(
-              'bundles' => array('idea'),
               'areas' => array('header'),
             ),
           ),
