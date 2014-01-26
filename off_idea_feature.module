@@ -47,7 +47,10 @@ function off_idea_feature_collabco_integration() {
         'node'=> array('idea'),
       ),
       'tab' => array(
-        'Ideas' => 'idea',
+        'Ideas' => array(
+          'subpath' => 'idea',
+          'node' => 'idea',
+        ),
       ),
       'views' => array(
         'ideas' => array(
