@@ -60,6 +60,7 @@ function off_idea_feature_og_features_default_permissions() {
   $permissions['node:closed_group:view field_idea_story field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'member' => 'member',
     ),
   );
 
