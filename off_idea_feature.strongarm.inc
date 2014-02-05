@@ -110,6 +110,12 @@ function off_idea_feature_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'social_share' => array(
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );
