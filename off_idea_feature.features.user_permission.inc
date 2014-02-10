@@ -15,7 +15,8 @@ function off_idea_feature_user_default_permissions() {
     'name' => 'create idea content',
     'roles' => array(
       'Admin' => 'Admin',
-      'authenticated user' => 'authenticated user',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -36,7 +37,8 @@ function off_idea_feature_user_default_permissions() {
     'name' => 'delete own idea content',
     'roles' => array(
       'Admin' => 'Admin',
-      'authenticated user' => 'authenticated user',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -57,7 +59,8 @@ function off_idea_feature_user_default_permissions() {
     'name' => 'edit own idea content',
     'roles' => array(
       'Admin' => 'Admin',
-      'authenticated user' => 'authenticated user',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
