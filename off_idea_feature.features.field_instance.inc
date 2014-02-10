@@ -337,6 +337,45 @@ function off_idea_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-idea-tags'
+  $field_instances['node-idea-tags'] = array(
+    'bundle' => 'idea',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'Tags',
+    'label' => 'tags',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 31,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Category');
@@ -344,6 +383,7 @@ function off_idea_feature_field_default_field_instances() {
   t('Details');
   t('Groups audience');
   t('Story');
+  t('tags');
 
   return $field_instances;
 }
