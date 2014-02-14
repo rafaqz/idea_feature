@@ -24,7 +24,6 @@ features[field_instance][] = node-idea-body
 features[field_instance][] = node-idea-field_category
 features[field_instance][] = node-idea-field_idea_story
 features[field_instance][] = node-idea-og_group_ref
-features[field_instance][] = node-idea-tags
 features[flag][] = idea_vote
 features[node][] = idea
 features[og_features_permission][] = node:closed_group:create idea content
