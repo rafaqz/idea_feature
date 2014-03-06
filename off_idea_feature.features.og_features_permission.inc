@@ -37,7 +37,6 @@ function off_idea_feature_og_features_default_permissions() {
   $permissions['node:closed_group:update any idea content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
-      'member' => 'member',
     ),
   );
 
@@ -91,7 +90,6 @@ function off_idea_feature_og_features_default_permissions() {
   $permissions['node:group:update any idea content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
-      'member' => 'member',
     ),
   );
 
@@ -154,7 +152,6 @@ function off_idea_feature_og_features_default_permissions() {
   $permissions['node:project:update any idea content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
-      'member' => 'member',
     ),
   );
 
