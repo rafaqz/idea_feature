@@ -118,13 +118,6 @@ function off_idea_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:project:approve and deny subscription'
-  $permissions['node:project:approve and deny subscription'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:project:create idea content'
   $permissions['node:project:create idea content'] = array(
     'roles' => array(
