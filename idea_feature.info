@@ -1,6 +1,6 @@
-name = OFF Idea Feature
+name = Idea Feature
 core = 7.x
-package = Collabco
+package = Features
 dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features

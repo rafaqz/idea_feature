@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Code for the OFF Idea Feature feature.
+ * Code for the Idea Feature.
  */
 
 include_once 'idea_feature.features.inc';
