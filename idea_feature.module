@@ -5,12 +5,12 @@
  * Code for the OFF Idea Feature feature.
  */
 
-include_once 'off_idea_feature.features.inc';
+include_once 'idea_feature.features.inc';
 
 /**
  * Implements hook_flag_flag().
  */
-function off_idea_feature_flag_validate($action, $flag, $entity_id, $account, $skip_permission_check, $flagging) {
+function idea_feature_flag_validate($action, $flag, $entity_id, $account, $skip_permission_check, $flagging) {
   if ($flag->name === "idea_vote") {
     // We only look at flaggings, and ignore unflaggings.
     if ($action === 'flag') {
@@ -37,12 +37,12 @@ function off_idea_feature_flag_validate($action, $flag, $entity_id, $account, $s
 }
 
 /**
- * Implements hook_collabco_integration().
+ * Implements hook_integration().
  */
-function off_idea_feature_collabco_integration() {
+function idea_feature_integration() {
   // Add links to views if a module wants to do that.
   return array(
-    'off_idea_feature' => array(
+    'idea_feature' => array(
       'entity' => array(
         'node'=> array(
           'idea' => array(

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * off_idea_feature.features.user_permission.inc
+ * idea_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function off_idea_feature_user_default_permissions() {
+function idea_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'create idea content'.

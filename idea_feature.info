@@ -74,5 +74,5 @@ features[variable][] = pathauto_node_idea_pattern
 features[views_view][] = idea_list
 features[views_view][] = idea_votes
 features[views_view][] = ideas
-features_exclude[dependencies][collabco_settings_feature] = collabco_settings_feature
+features_exclude[dependencies][settings_feature] = settings_feature
 project path = sites/all/modules/features
